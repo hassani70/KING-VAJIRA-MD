@@ -26,7 +26,7 @@
 
 ## Select any qr below 3 qr and Click the Fork button and click green color play button then will open the qr 
 
-[![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://qr-for-king-v1-dc716a293659.herokuapp.com/)
+[![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://replit.com/@VajiraRathnayak/KING-VAJIRA-MD-QR-6#index.js)
 
 ## You can bot make in vercel app below
 
