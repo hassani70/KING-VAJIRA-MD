@@ -25,22 +25,4 @@
 
 .
 
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
-.
-
 # two days only comming soon 😀
