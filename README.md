@@ -24,9 +24,9 @@
 
 </p>
 
-## every replit qr have an error not show play button to open qr they will fix it soon dont worry anyone 
+## First scan qr then will come session.zip file extract it then will come few files it has creds.json file put it into 'session_file' inside and deploy
 
-[![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://vajira-qrcode.vercel.app/)
+[![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://vajiraqr-70d97540712f.herokuapp.com/)
 
 ## You can bot make in vercel app below
 
