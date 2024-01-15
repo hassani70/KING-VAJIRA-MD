@@ -30,7 +30,7 @@
 
 ## You can bot make in vercel app below
 
-***Click [Vercel App](https://vajira-code-38sn.vercel.app/)***
+***Click [Vercel App](https://vajira-code-sgbk.vercel.app/ )***
 
 ***Click [FORK](https://github.com/vajirabot1/KING-VAJIRA-MD-fork)***
 
