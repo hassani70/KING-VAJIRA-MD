@@ -26,7 +26,7 @@
 
 ## every replit qr have an error not show play button to open qr they will fix it soon dont worry anyone 
 
-[![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://vajira-qrcode.vercel.app/)
+[![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://webqr1-606e10e75bed.herokuapp.com/)
 
 ## You can bot make in vercel app below
 
