@@ -26,7 +26,7 @@
 
 ## Refresh the page when not show the qr then you can scan the qr code
 
-[![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://webqr1-606e10e75bed.herokuapp.com/)
+[![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://vajira-qr-web.vercel.app/ )
 
 ## You can bot make in vercel app below
 
