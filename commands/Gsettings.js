@@ -1,106 +1,118 @@
-const os = require('os');
-
-const { cmd,tlang,prefix,runtime,formatp} = require('../lib/');
+const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib')
+const { mediafire } = require("../lib/mediafire.js");
+const googleTTS = require("google-tts-api");
+const ytdl = require('ytdl-secktor')
+const fs = require('fs-extra')
+var videotime = 60000 // 1000 min
+var dlsize = 1000 // 1000mb
+//---------------------------------------------------------------------------
 
 cmd({
 
-            pattern: "groupsetting",
-
-            alias: ["gs"],
-
-            desc: "some group settings change.",
-
-            category: "extra",
-
-            filename: __filename
+            pattern: "groupsetting",           
+            desc: "(menu cmdlist).",
+            category: "_help",
+            react: "👨‍💻",
+            filename: __filename,
+            use: '<faded-Alan walker.>',
 
         },
 
         async(Void, citel, text) => {
+        let buttons = [{
 
-           let list = [{
+                    buttonId: `${prefix}system`,
+                    buttonText: {
+                    displayText: "System",
+                    },
 
-title: 'MUTE GROUP 🔇',
+                    type: 1,
+                },
+                  {
+                    buttonId: `${prefix}ping`,
+                    buttonText: {
+                    displayText: "Ping",
 
-rowId: `${prefix}group close`,
+                    },
+                    type: 1,
+                },
+            ];
+            let buttonMessage = {
+                image: {
+                    url: 'https://telegra.ph/file/b10172f9cfdbe5f43c43e.jpg',
+                },
 
-description: ' '
+                caption: `
+*⦁──👑𝙆𝙄𝙉𝙂-𝙑𝘼𝙅𝙄𝙍𝘼-𝙈𝘿👑──⦁*
 
-},
+💓𝗵𝗲𝗹𝗹𝗼𝘄 ${citel.pushName}💓
 
-{
 
-title: 'UNMUTE GROUP 🔊',
+title: MUTE GROUP 🔇
 
-rowId: `${prefix}group open`,
-
-description: ' '
-
-},
-
-{
-
-title: 'ACTIVE ANTILINK ✅',
-
-rowId: `${prefix}act antilink`,
-
-description: ' '
-
-},
-
-{
-
-title: 'DEACTIVE ANTILINK ❌',
-
-rowId: `${prefix}deact antilink`,
+rowId: ${prefix}group close
 
 description: ' '
 
-},
 
-{
 
-title: 'ACTIVE BOT THIS GROUP ✅',
+title: UNMUTE GROUP 🔊
 
-rowId: `${prefix}bot on`,
+rowId: ${prefix}group open
 
-description: ''
+description: ' '
 
-},
 
-{
 
-title: 'DEACTIVE BOT THIS GROUP ❌',
+title: ACTIVE ANTILINK ✅
 
-rowId: `${prefix}bot off`,
+rowId: ${prefix}act antilink
 
-description: ''
+description: ' '
 
-},
 
-{
 
-title: 'ACTIVE ADD MESSAGE AND LEFT MESSAGE ✅',
+title: DEACTIVE ANTILINK ❌
 
-rowId: `${prefix}act events`,
+rowId: ${prefix}deact antilink
 
-description: ''
+description: ' '
 
-},
 
-{
 
-title: 'DEACTIVE ADD MESSAGE AND LEFT MESSAGE ❌',
+title: ACTIVE BOT THIS GROUP ✅
 
-rowId: `${prefix}deact events`,
+rowId: ${prefix}bot on
 
 description: ''
 
-}
 
-            ]
 
-            ted = `┏━━━━━━━━━━━━━━━━━━━━━━━━━
+title: DEACTIVE BOT THIS GROUP ❌
+
+rowId: ${prefix}bot off
+
+description: ''
+
+
+
+title: ACTIVE ADD MESSAGE AND LEFT MESSAGE ✅
+
+rowId: ${prefix}act events
+
+description: ''
+
+
+
+title: DEACTIVE ADD MESSAGE AND LEFT MESSAGE ❌
+
+rowId: ${prefix}deact events
+
+description: ''
+
+
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━
 ┃   *GROUP SETTINGS CHANGE*
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -120,44 +132,15 @@ description: ''
 ● DEACTIVE ADD MESSAGE AND LEFT MESSAGE 
 
 
-⦿. *REQUEST BY:* ${citel.pushName}
-
-`
-
-            const sections = [
-
-                {
-
-                    title: "Change settings",
-
-                    rows: list
-
-                }
-
-            ]
-
-            const listMessage = {
-
-                text: ted,
+*ᴋɪɴɢ ᴠᴀᴊɪʀᴀ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ*
+*▶ ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴡᴍʀ ᴠᴀᴊɪʀᴀ ◀*
+`,
 
                 footer: tlang().footer,
-
-                title: ``,
-
-                buttonText: "Change Settings ",
-
-                mentions: await Void.parseMention(ted),
-
-                sections
-
-            }
-
-            return Void.sendMessage(citel.chat, listMessage, {
-
-                quoted: citel
-
-            })
-
+                headerType: 4,
+            };
+            return Void.sendMessage(citel.chat, buttonMessage, {
+                quoted: citel,
+            });
         }
-
     )
