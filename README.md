@@ -24,7 +24,7 @@
 
 </p>
 
-## Refresh the page when not shor the qr then will show the qr code
+## Refresh the page when not show the qr then you can scan the qr code
 
 [![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://webqr1-606e10e75bed.herokuapp.com/)
 
