@@ -4,7 +4,7 @@ const { cmd,tlang,prefix,runtime,formatp} = require('../lib/');
 
 cmd({
 
-            pattern: "groupsettings",
+            pattern: "groupsetting",
 
             alias: ["gs"],
 
