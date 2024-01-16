@@ -30,7 +30,11 @@
 
 ## More QR-CODES...
 
+QR-CODE 1 ⤵
+
 <a href="https://vajiraqr-5069a1a98e7d.herokuapp.com/"><img src="https://i.ibb.co/FWSfNmb/scan-qr-zusyco-btn.png" alt="QR-CODE 1" border="2" width="170" height="40" ></a>
+
+QR-CODE 2 ⤵
 
 <a href="https://king-vajira-qr.onrender.com/"><img src="https://i.ibb.co/FWSfNmb/scan-qr-zusyco-btn.png" alt="QR-CODE 2" border="2" width="170" height="40" ></a>
 
