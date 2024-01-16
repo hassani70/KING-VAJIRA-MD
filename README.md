@@ -28,6 +28,12 @@
 
 [![Scan QR CODE 1](https://i.imgur.com/ouR5zv8.jpg)](https://vajira-qr-web.vercel.app/)
 
+## More QR-CODES...
+
+<a href="https://vajiraqr-5069a1a98e7d.herokuapp.com/"><img src="https://i.ibb.co/FWSfNmb/scan-qr-zusyco-btn.png" alt="QR-CODE 1" border="2" width="170" height="40" ></a>
+
+<a href="https://king-vajira-qr.onrender.com/"><img src="https://i.ibb.co/FWSfNmb/scan-qr-zusyco-btn.png" alt="QR-CODE 2" border="2" width="170" height="40" ></a>
+
 ## You can bot make in vercel app below
 
 ***Click [Vercel App](https://vajira-code-sgbk.vercel.app/)***
