@@ -36,26 +36,7 @@ cmd({
                 let randomName = getRandom(".mp4");
             citel.reply('_Download Your Movie_')
 	    citel.reply('_Uploading your Movie_')
-	    let buttonMessaged ={
-             image: {
-                    url: anu.thumbnail,
-               },
-                caption: `
- ───────➢───────
- 🎧𝕂𝕀ℕ𝔾 𝕍𝔸𝕁𝕀ℝ𝔸🎧
-┋👩‍🎨 ${tlang().title} 
-┋🚨 *Youtube Player* ✨
-  ╼━━━━━➢━━━━━━╾
-┋🗒️ *Title:* ${anu.title}
-
-┋⏳ *Duration:* ${anu.timestamp}
-┋👀 *Viewers:* ${anu.views}
-┋📤 *Uploaded:* ${anu.ago}
-┋🧑‍🎤 *Author:* ${anu.author.name}
-┋⬇️ Upload To Song
- ───────➢────────
-⦿ *Url* : ${anu.url}
-`,	
+	    	
                 const stream = ytdl(urlYt, {
                         filter: (info) => info.itag == 22 || info.itag == 18,
                     })
@@ -69,10 +50,26 @@ cmd({
                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
                 if (fileSizeInMegabytes <= dlsize) {
                     let buttonMessage = {
+			    image: {
+                    url: anu.thumbnail,
+               },
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: 'document/mp4',
                         fileName: `${titleYt}.mp4`,
-                        caption: `★[KING VAJIRA MD]★ `,                        
+                        caption: `───────➢───────
+ 🎧𝕂𝕀ℕ𝔾 𝕍𝔸𝕁𝕀ℝ𝔸🎧
+┋👩‍🎨 ${tlang().title} 
+┋🚨 *Youtube Player* ✨
+  ╼━━━━━➢━━━━━━╾
+┋🗒️ *Title:* ${anu.title}
+
+┋⏳ *Duration:* ${anu.timestamp}
+┋👀 *Viewers:* ${anu.views}
+┋📤 *Uploaded:* ${anu.ago}
+┋🧑‍🎤 *Author:* ${anu.author.name}
+┋⬇️ Upload To Song
+ ───────➢────────
+⦿ *Url* : ${anu.url}`,                        
                         headerType: 4,
                         contextInfo: {
                             externalAdReply: {
