@@ -60,8 +60,8 @@ if (text.startsWith("https://youtube.com/shorts/")) {
 *ඔබට අවශය අංකය පහතින් තෝරා මෙයට tag කර එවන්න*
 ┈─┈──┈─◈❁◈─┈─┈─┈─◍
 
-*3.1 ╏ MP4 VIDEO* 📽️
-*4.1 ╏ MP4 DOCUMENT* 📂
+*5.1 ╏ MP4 VIDEO* 📽️
+*6.1 ╏ MP4 DOCUMENT* 📂
 
 
 
