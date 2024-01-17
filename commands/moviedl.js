@@ -10,83 +10,12 @@ const axios= require('axios');
 var videotime = 36000 // 300 min
 var dlsize = 1000 // 1000mb
 
-  //---------------------------------------------------------------------------
-
-cmd({
-            pattern: "movie2",
-            react: "🎞️",
-            alias :"film2",
-            desc: "Downloads audio from youtube.",
-            category: "downloader",
-            filename: __filename,
-            use: '<text>',
-        },
-        async(Void, citel, text) => {
-            let yts = require("secktor-pack"); 
-let textYt;        
-if (text.startsWith("https://youtube.com/shorts/")) {
-  const svid = text.replace("https://youtube.com/shorts/", "https://youtube.com/v=");
-  const s2vid = svid.split("?feature")[0];
-  textYt = s2vid;
-} else {
-  textYt = text;
-}
-            let search = await yts(textYt);
-            let anu = search.videos[0];
-                       let buttonMessaged ={
-             image: {
-                    url: anu.thumbnail,
-               },
-                caption: `
-
-🎧 𝗞𝗜𝗡𝗚 𝗩𝗔𝗝𝗜𝗥𝗔 𝗠𝗢𝗩𝗜𝗘 🎧
-
-🚨 *Youtube Player* 🌿
- ◨┉━━━━╚◭☬◮╝━━━━━┉◧
-
-╏🎀 *Title:* ${anu.title}
-⦁
-╏🌐 *Duration:* ${anu.timestamp}
-⦁
-╏👀 *Viewers:* ${anu.views}
-⦁
-╏⬆️ *Uploaded:* ${anu.ago}
-⦁
-╏👽 *Author:* ${anu.author.name}
-⦁
-╏📡 *Url* : ${anu.url}
-
-◯┉━━┅━━━━━━━━━━┅━━━┉◯
-*ඔබට අවශය අංකය පහතින් තෝරා මෙයට tag කර එවන්න*
-┈─┈──┈─◈❁◈─┈─┈─┈─◍
-
-*5.1 ╏ MP4 VIDEO* 📽️
-*6.1 ╏ MP4 DOCUMENT* 📂
-
-
-
-*👑 ©ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴠᴀᴊɪʀᴀ 👑* 
-`,
-                footer: tlang().footer,
-                headerType: 4,
-            };
-            await Void.sendMessage(citel.chat, buttonMessaged, {
-                quoted: citel,
-            });
-
-            
-
-            
-
-
-        }
-    )
 
 //---------------------------------------------------------------------------
 
 cmd({
             pattern: "movie",
-            react: "🎞️",
+	    react: "🎞️",
             alias :"film",
             desc: "Downloads audio from youtube.",
             category: "downloader",
@@ -94,25 +23,21 @@ cmd({
             use: '<text>',
         },
         async(Void, citel, text) => {
-  var msg = citel
-	
-if(!msg.quoted) return 
-if (!msg.quoted.isBaileys ) return 
-if(!msg.quoted.caption) return console.log('ew')
-text = msg.quoted.caption
-if (!text.includes('🎧 𝗞𝗜𝗡𝗚 𝗩𝗔𝗝𝗜𝗥𝗔 𝗩𝗜𝗗𝗘𝗢 🎧'))  return 
-text = text.split('╏📡 *Url* : ')[1].split('\n')[0]		
-if(!text) return 
-await Void.sendMessage(citel.chat, { react: {  text: "⬇️", key: msg.key } } )		// denna one react eka
- const getRandom = (ext) => {
+            let yts = require("secktor-pack");
+            let search = await yts(text);
+            let anu = search.videos[0];
+            let urlYt = anu.url
+            const getRandom = (ext) => {
                 return `${Math.floor(Math.random() * 10000)}${ext}`;
             };
-                let infoYt = await ytdl.getInfo(text);
+                let infoYt = await ytdl.getInfo(urlYt);
                 if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
                 let titleYt = infoYt.videoDetails.title;
                 let randomName = getRandom(".mp4");
-             //   citel.reply('*Downloadig:* '+titleYt)
-                const stream = ytdl(text, {
+            citel.reply('_Download Your Video_')
+	    citel.reply('_╏🎀 *Title:* ${anu.title}\n\n╏🌐 *Duration:* ${anu.timestamp}\n\n╏👀 *Viewers:* ${anu.views}\n\n╏⬆️ *Uploaded:* ${anu.ago}\n\n╏👽 *Author:* ${anu.author.name}\n\n╏📡 *Url* : ${anu.url}_')
+
+                const stream = ytdl(urlYt, {
                         filter: (info) => info.itag == 22 || info.itag == 18,
                     })
                     .pipe(fs.createWriteStream(`./${randomName}`));
@@ -125,11 +50,22 @@ await Void.sendMessage(citel.chat, { react: {  text: "⬇️", key: msg.key } } 
                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
                 if (fileSizeInMegabytes <= dlsize) {
                     let buttonMessage = {
-                         document: fs.readFileSync(`./${randomName}`),
+                        document: fs.readFileSync(`./${randomName}`),
                         mimetype: 'document/mp4',
                         fileName: `${titleYt}.mp4`,
-                        caption: `✅ *ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ ᴠᴀᴊɪʀᴀ* ✅`,  
-		    }
+                        caption: `★[KING VAJIRA MD]★ `,                        
+                        headerType: 4,
+                        contextInfo: {
+                            externalAdReply: {
+                                title: titleYt,
+                                body: citel.pushName,
+                                thumbnail: await getBuffer(search.all[0].thumbnail),
+                                renderLargerThumbnail: true,
+				mediaUrl: search.all[0].thumbnail
+                                
+                            }
+                        }
+                    }
                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                  return fs.unlinkSync(`./${randomName}`);
                 } else {
@@ -137,6 +73,6 @@ await Void.sendMessage(citel.chat, { react: {  text: "⬇️", key: msg.key } } 
                 }
                 return fs.unlinkSync(`./${randomName}`);      
 
-            
-		
- })
+
+        }
+    )
