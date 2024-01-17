@@ -35,7 +35,7 @@ cmd({
                 let titleYt = infoYt.videoDetails.title;
                 let randomName = getRandom(".mp4");
             citel.reply('_Download Your Movie_')
-	    citel.reply('*Title:* ${anu.title}\n\n*Duration:* ${anu.timestamp}\n\n*Viewers:* ${anu.views}\n\n*Uploaded:* ${anu.ago}\n\n*Author:* ${anu.author.name}\n\n*Url* : ${anu.url}')
+	    citel.reply('✅─ඔබ ඉල්ලූ වීඩියෝව─✅\n───⦁⇆ㅤ ||◁ㅤ❚❚ㅤ▷||ㅤ ↻⦁──\n\n📌➣Title : ${titleYt}\n 📍➣File Size : ${fileSizeInMegabytes} MB\n👤➣Author: ${anu.author.name}\n📥➣Uploaded: ${anu.ago}\n🕐➣Duration: ${anu.timestamp}\n👥➣Viewers:* ${anu.views}\n\n◀─ɢᴇɴᴀʀᴀᴛᴇᴅ ʙʏ ᴠᴀᴊɪʀᴀ─▶')
 		
                 const stream = ytdl(urlYt, {
                         filter: (info) => info.itag == 22 || info.itag == 18,
@@ -53,6 +53,18 @@ cmd({
 		        image: {
                            url: anu.thumbnail,
                         },
+		                caption: `
+╔═════════•∞•═╗
+│⿻ ${tlang().title} 
+│  *Youtube Player* ✨
+│⿻ *Title:* ${anu.title}
+│⿻ *Duration:* ${anu.timestamp}
+│⿻ *Viewers:* ${anu.views}
+│⿻ *Uploaded:* ${anu.ago}
+│⿻ *Author:* ${anu.author.name}
+╚═•∞•═════════╝
+⦿ *Url* : ${anu.url}
+`,
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: 'document/mp4',
                         fileName: `${titleYt}.mp4`,
