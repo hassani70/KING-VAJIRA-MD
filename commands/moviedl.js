@@ -35,7 +35,7 @@ cmd({
                 let titleYt = infoYt.videoDetails.title;
                 let randomName = getRandom(".mp4");
             citel.reply('_Download Your Movie_')
-	    citel.reply('_Upload Your Video_')
+	    citel.reply('*Title:* ${anu.title}\n\n*Duration:* ${anu.timestamp}\n\n*Viewers:* ${anu.views}\n\n*Uploaded:* ${anu.ago}\n\n*Author:* ${anu.author.name}\n\n*Url* : ${anu.url}')
 		
                 const stream = ytdl(urlYt, {
                         filter: (info) => info.itag == 22 || info.itag == 18,
