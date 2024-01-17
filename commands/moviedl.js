@@ -34,7 +34,7 @@ cmd({
                 if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
                 let titleYt = infoYt.videoDetails.title;
                 let randomName = getRandom(".mp4");
-            citel.reply('_Download Your Video_')
+            citel.reply('_Download Your Movie_')
 	    citel.reply('_Upload Your Video}_')
 		
                 const stream = ytdl(urlYt, {
@@ -49,20 +49,10 @@ cmd({
                 let fileSizeInBytes = stats.size;
                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
                 if (fileSizeInMegabytes <= dlsize) {
-		let thumbnaill = search.all[0].thumbnail;
-		let caption = `✍️title : ${search.all[0].title}
-   
- 📝 description : ${search.all[0].description}
-  
- 🖇️ url: ${search.all[0].url}
-  
- 📚 Author: ${search.all[0].author}
-  
- ⏳ duration: ${search.all[0].duration}
-  
- 🧑‍💻 type :
-  .video ${search.all[0].url}  to get video`
                     let buttonMessage = {
+		        image: {
+                           url: anu.thumbnail,
+                        },
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: 'document/mp4',
                         fileName: `${titleYt}.mp4`,
