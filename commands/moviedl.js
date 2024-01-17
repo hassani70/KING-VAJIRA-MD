@@ -13,9 +13,9 @@ var dlsize = 1000 // 1000mb
   //---------------------------------------------------------------------------
 
 cmd({
-            pattern: "movie",
+            pattern: "movie2",
             react: "🎞️",
-            alias :"film",
+            alias :"film2",
             desc: "Downloads audio from youtube.",
             category: "downloader",
             filename: __filename,
@@ -81,68 +81,14 @@ if (text.startsWith("https://youtube.com/shorts/")) {
 
         }
     )
-cmd({
-            pattern: "5",
-            react: "",
-            alias :[],
-            desc: "",
-            category: "downloader",
-            filename: __filename,
-            use: '<text>',
-        },
-        async(Void, citel, text) => {
-  var msg = citel
-	
-if(!msg.quoted) return 
-if (!msg.quoted.isBaileys ) return 
-if(!msg.quoted.caption) return console.log('ew')
-text = msg.quoted.caption
-if (!text.includes('🎧 𝗞𝗜𝗡𝗚 𝗩𝗔𝗝𝗜𝗥𝗔 𝗩𝗜𝗗𝗘𝗢 🎧'))  return 
-text = text.split('╏📡 *Url* : ')[1].split('\n')[0]		
-if(!text) return 
-await Void.sendMessage(citel.chat, { react: {  text: "⬇️", key: msg.key } } )		// denna one react eka
- const getRandom = (ext) => {
-                return `${Math.floor(Math.random() * 10000)}${ext}`;
-            };
-                let infoYt = await ytdl.getInfo(text);
-                if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
-                let titleYt = infoYt.videoDetails.title;
-                let randomName = getRandom(".mp4");
-             //   citel.reply('*Downloadig:* '+titleYt)
-                const stream = ytdl(text, {
-                        filter: (info) => info.itag == 22 || info.itag == 18,
-                    })
-                    .pipe(fs.createWriteStream(`./${randomName}`));
-                await new Promise((resolve, reject) => {
-                    stream.on("error", reject);
-                    stream.on("finish", resolve);
-                });
-                let stats = fs.statSync(`./${randomName}`);
-                let fileSizeInBytes = stats.size;
-                let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
-                if (fileSizeInMegabytes <= dlsize) {
-                    let buttonMessage = {
-                        video: fs.readFileSync(`./${randomName}`),
-                        mimetype: 'video/mp4',
-                        caption:`✅ ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ ᴠᴀᴊɪʀᴀ ✅`,   
-		    }
-                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
-                 return fs.unlinkSync(`./${randomName}`);
-                } else {
-                    citel.reply(`❌ File size bigger than 100mb.`);
-                }
-                return fs.unlinkSync(`./${randomName}`);      
 
-            
-		
- })
-
+//---------------------------------------------------------------------------
 
 cmd({
-            pattern: "6",
-            react: "",
-            alias :[],
-            desc: "",
+            pattern: "movie",
+            react: "🎞️",
+            alias :"film",
+            desc: "Downloads audio from youtube.",
             category: "downloader",
             filename: __filename,
             use: '<text>',
