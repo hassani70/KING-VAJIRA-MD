@@ -35,8 +35,8 @@ cmd({
                 let titleYt = infoYt.videoDetails.title;
                 let randomName = getRandom(".mp4");
             citel.reply('_Download Your Video_')
-	    citel.reply('_╏🎀 *Title:* ${anu.title}\n\n╏🌐 *Duration:* ${anu.timestamp}\n\n╏👀 *Viewers:* ${anu.views}\n\n╏⬆️ *Uploaded:* ${anu.ago}\n\n╏👽 *Author:* ${anu.author.name}\n\n╏📡 *Url* : ${anu.url}_')
-
+	    citel.reply('_Upload Your Video}_')
+		
                 const stream = ytdl(urlYt, {
                         filter: (info) => info.itag == 22 || info.itag == 18,
                     })
@@ -49,6 +49,19 @@ cmd({
                 let fileSizeInBytes = stats.size;
                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
                 if (fileSizeInMegabytes <= dlsize) {
+		let thumbnaill = search.all[0].thumbnail;
+		let caption = `✍️title : ${search.all[0].title}
+   
+ 📝 description : ${search.all[0].description}
+  
+ 🖇️ url: ${search.all[0].url}
+  
+ 📚 Author: ${search.all[0].author}
+  
+ ⏳ duration: ${search.all[0].duration}
+  
+ 🧑‍💻 type :
+  .video ${search.all[0].url}  to get video`
                     let buttonMessage = {
                         document: fs.readFileSync(`./${randomName}`),
                         mimetype: 'document/mp4',
