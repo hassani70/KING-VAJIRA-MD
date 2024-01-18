@@ -1,24 +1,48 @@
-const moment = require('moment-timezone')
-const {fetchJson,cmd, tlang } = require('../lib')
-let gis = require("async-g-i-s");
-const axios = require('axios')
-const fetch = require('node-fetch')
+const { tlang, ringtone, cmd,fetchJson, sleep, botpic,ffmpeg, getBuffer, pinterest, prefix, Config } = require('../lib')
+const { mediafire } = require("../lib/mediafire.js");
+const googleTTS = require("google-tts-api");
+const ytdl = require('ytdl-secktor')
+const fs = require('fs-extra')
+var videotime = 60000 // 1000 min
+var dlsize = 1000 // 1000mb
+//---------------------------------------------------------------------------
 
-    //---------------------------------------------------------------------------
 cmd({
-            pattern: "movie2",
-            category: "search",
-            react: "🎬",
-            desc: "Sends image of asked Movie/Series.",
-            use: '<text>',
+
+            pattern: "movie2",           
+            desc: "(menu cmdlist).",
+            category: "_help",
+            react: "👨‍💻",
             filename: __filename,
+            use: '<faded-Alan walker.>',
+
         },
+
         async(Void, citel, text) => {
-            if (!text) return citel.reply(`_Name a Series or movie ${tlang().greet}._`);
-           await Void.sendMessage(
-                citel.chat, 
-{
-  status: true,
+        let buttons = [{
+
+                    buttonId: `${prefix}system`,
+                    buttonText: {
+                    displayText: "System",
+                    },
+
+                    type: 1,
+                },
+                  {
+                    buttonId: `${prefix}ping`,
+                    buttonText: {
+                    displayText: "Ping",
+
+                    },
+                    type: 1,
+                },
+            ];
+            let buttonMessage = {
+                image: {
+                    url: anu.thumbnail,
+                },
+
+                  status: true,
   code_creator: { name: 'Thisal Sanujaya', github: '@sanuwaofficial' },
   result: {
     title: 'Money Heist (2017 – 2021) Sinhala Subtitles | සිංහල උපසිරසි සමඟ',
@@ -57,14 +81,12 @@ cmd({
           ]
   }
 }
-            Void.sendMessage(citel.chat, {
-                image: {
-                    url: fids.data.Poster,
-                },
-                caption: imdbt,
-            }, {
+
+                footer: tlang().footer,
+                headerType: 4,
+            };
+            return Void.sendMessage(citel.chat, buttonMessage, {
                 quoted: citel,
             });
-
         }
     )
