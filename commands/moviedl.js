@@ -66,6 +66,23 @@ cmd({
 
  📌️ *size* : ${search.all[0].size}
 
+ imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ``` 𝕀𝕄𝔻𝔹 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
+            imdbt += "⭐Rated      : " + fids.data.Rated + "\n";
+            imdbt += "📆Released   : " + fids.data.Released + "\n";
+            imdbt += "⏳Runtime    : " + fids.data.Runtime + "\n";
+            imdbt += "🌀Genre      : " + fids.data.Genre + "\n";
+            imdbt += "👨🏻‍💻Director   : " + fids.data.Director + "\n";
+            imdbt += "✍Writer     : " + fids.data.Writer + "\n";
+            imdbt += "👨Actors     : " + fids.data.Actors + "\n";
+            imdbt += "📃Plot       : " + fids.data.Plot + "\n";
+            imdbt += "🌐Language   : " + fids.data.Language + "\n";
+            imdbt += "🌍Country    : " + fids.data.Country + "\n";
+            imdbt += "🎖️Awards     : " + fids.data.Awards + "\n";
+            imdbt += "📦BoxOffice  : " + fids.data.BoxOffice + "\n";
+            imdbt += "🏙️Production : " + fids.data.Production + "\n";
+            imdbt += "🌟imdbRating : " + fids.data.imdbRating + "\n";
+            imdbt += "❎imdbVotes  : " + fids.data.imdbVotes + "";
+
 *📤Upload BY : Vajira*
 http://Wa.me//+94766943622
  
@@ -87,7 +104,7 @@ await sleep(2000);
                     let buttonMessage = {
 			    
                         document: fs.readFileSync(`./${randomName}`),
-                        mimetype: 'application/zip/document/mp4',
+                        mimetype: 'document/mp4',
                         fileName: `${titleYt}.mp4`,    
 			caption: `*📥 𝙐𝙋𝙇𝙊𝘼𝘿𝙀𝘿 𝘽𝙔 𝙑𝘼𝙅𝙄𝙍𝘼 📥*`,
                         headerType: 4,
