@@ -17,7 +17,7 @@ cmd({
    },   
    async(Void, citel) => {   
    try{   
-   const nasa = await fetchJson(`https://darkapi--technicalhacke4.repl.co/nasanews`);   
+   const nasa = await fetchJson(`https://vihangayt.me/details/nasa`);   
   
              const images = `${nasa.result.image}`   
               const title = `${nasa.result.title}`  
