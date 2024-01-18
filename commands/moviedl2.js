@@ -6,18 +6,17 @@ const fetch = require('node-fetch')
 
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "movie",
-            alias :['imdb','film'],
+            pattern: "movie2",
             category: "search",
+            react: "🎬",
             desc: "Sends image of asked Movie/Series.",
             use: '<text>',
             filename: __filename,
         },
         async(Void, citel, text) => {
             if (!text) return citel.reply(`_Name a Series or movie ${tlang().greet}._`);
-            let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
-            
-
+           await Void.sendMessage(
+                citel.chat, 
 {
   status: true,
   code_creator: { name: 'Thisal Sanujaya', github: '@sanuwaofficial' },
