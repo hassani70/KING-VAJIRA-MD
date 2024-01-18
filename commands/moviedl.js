@@ -106,8 +106,7 @@ await sleep(2000);
 //---------------------------------------------------------------------------
 
 cmd({ 
-             pattern: "video2", 
-            alias :['විඩියො','vd'],
+             pattern: "movie2", 
              desc: "Downloads video from yt.", 
              category: "downloader", 
              filename: __filename, 
