@@ -140,8 +140,7 @@ Secktor.cmd({
             'TEL;type=CELL;type=VOICE;waid=' + owner[0] + ':+' + owner[0] + '\n' +
             'END:VCARD'
         let buttonMessaged = {
-                image: {
-                    url: await botpic(),
+            image: { url: await botpic() },
             contacts: { displayName: Config.ownername, contacts: [{ vcard }] },
             contextInfo: {
                 externalAdReply: {
