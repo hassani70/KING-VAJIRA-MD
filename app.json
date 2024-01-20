@@ -9,7 +9,10 @@
   "OWNER_NAME": {
   "description": "OWNER NAME",
       "value": "VAJIRA RATHNAYAKA"
-
+    },
+  "ALIVE_MESSAGE": {
+    "description": "Alive message for bot",
+     "required" :false
     },
   "AUTO_READ_STATUS": {
     "description": "Fill the value true if you want bot view your Statuses./ ඔටො ඉස්ටෙටස් සීන් කරන්න ඔනිනම් true/false දමන්න",
