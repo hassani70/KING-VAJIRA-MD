@@ -142,9 +142,6 @@ Secktor.cmd({
         let buttonMessaged = {
             contacts: { displayName: Config.ownername, contacts: [{ vcard }] },
             image: { url: await botpic() },
-            caption: cap,
-            footer: tlang().footer,
-            headerType: 4,
             contextInfo: {
                 externalAdReply: {
                     title: Config.ownername,
