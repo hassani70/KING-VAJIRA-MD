@@ -269,8 +269,6 @@ https://youtube.com/@gamingewingyt6216\n📍 How to deploy➣ https://youtu.be/w
 _Type ${prefix}menu for my command list._
 
 _━━━Powered by Vajira Rathnayaka━━━_
-
-_Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
