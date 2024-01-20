@@ -1,14 +1,13 @@
 const os = require('os');
 const { cmd,tlang,prefix,runtime,formatp} = require('../lib/');
 cmd({
-            pattern: "menu3",
+            pattern: "menu",
             desc: "some settings change.",
             category: "extra",
             react: "👨‍💻",
             filename: __filename
         },
         async(Void, citel, text) => {
-          try {
            let list = [{
 title: 'DOWNLOAD COMMAND LIST',
 rowId: `${prefix}downloadcmd`,
@@ -79,8 +78,5 @@ description: ' '
             return Void.sendMessage(citel.chat, listMessage, {
                 quoted: citel
             })
-          } catch (error) => {
-            console.log(":(♦️ERROR👉 "+error)
-          }
         }
     )
