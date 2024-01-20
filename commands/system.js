@@ -252,9 +252,11 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
             const alivtxt = `
-⦁━⦁👑𝙆𝙄𝙉𝙂-𝙑𝘼𝙅𝙄𝙍𝘼-𝙈𝘿👑⦁━⦁\n\nHello, ${citel.pushName},\n
+⦁━⦁👑*𝙆𝙄𝙉𝙂-𝙑𝘼𝙅𝙄𝙍𝘼-𝙈𝘿*👑⦁━⦁\n\n*Hello, ${citel.pushName},*
+_This is  ${tlang().title}._
+${alivemessage}
 
 _හරියනකොට අඩන මිනිස්සු වරදිනකොට හිනා වෙනවා🤘_
 ━━━✥◈✥━━━
@@ -267,10 +269,12 @@ https://youtube.com/@gamingewingyt6216\n📍 How to deploy➣ https://youtu.be/w
 _Type ${prefix}menu for my command list._
 
 _━━━Powered by Vajira Rathnayaka━━━_
+
+_Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
-                    url: 'https://telegra.ph/file/38ca08b1213d105cafd7b.jpg',
+                    url: await botpic(),
                 },
                 caption: alivtxt,
                 footer: tlang().footer,
@@ -282,6 +286,7 @@ _━━━Powered by Vajira Rathnayaka━━━_
 
         }
     )
+
     //---------------------------------------------------------------------------
 cmd({
         pattern: "allnotes",
