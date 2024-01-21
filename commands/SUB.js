@@ -18,10 +18,10 @@ cmd({
     filename: __filename
 },
 async(Void, citel, text) => {
-if (!text) return citel.reply("❗ *Please enter movie name to download Subtitles*")
-let search = await subsearch(text)
-let anu = await subdl(search.results[0].link)
-let caption =`*KING VAJIRA SINHALA SUB DOWNLOADER*
+   if (!text) return citel.reply("❗ *Please enter movie name to download Subtitles*")
+   let search = await subsearch(text)
+   let anu = await subdl(search.results[0].link)
+   let caption =`*KING VAJIRA SINHALA SUB DOWNLOADER*
 
 📊 *Movie Title - ${latest.results.title}*
 
@@ -50,10 +50,10 @@ cmd({
     filename: __filename
 },
 async(Void, citel, text) => {
-if (!text) return citel.reply("❗ *Please enter movie name to Search Subtitles*")
-let search = await subsearch(text)
-    let yt = '\n❍⚯────────────────────⚯❍\n        🌐  *𝚂𝙻 𝚂𝚄𝙱 𝚂𝙴𝙰𝚁𝙲𝙷 𝙻𝙸𝚂𝚃*  🌐\n ⚡ *ᴋɪɴɢ ᴠᴀᴊɪʀᴀ ꜱʟ ꜱᴜʙᴛɪᴛʟᴇ ꜱᴇᴀʀᴄʜᴇʀ* ⚡\n❍⚯────────────────────⚯❍\n\n\n'
-    for (let anu of vid.results ) {
+   if (!text) return citel.reply("❗ *Please enter movie name to Search Subtitles*")
+   let search = await subsearch(text)
+   let yt = '\n❍⚯────────────────────⚯❍\n        🌐  *𝚂𝙻 𝚂𝚄𝙱 𝚂𝙴𝙰𝚁𝙲𝙷 𝙻𝙸𝚂𝚃*  🌐\n ⚡ *ᴋɪɴɢ ᴠᴀᴊɪʀᴀ ꜱʟ ꜱᴜʙᴛɪᴛʟᴇ ꜱᴇᴀʀᴄʜᴇʀ* ⚡\n❍⚯────────────────────⚯❍\n\n\n'
+   for (let anu of vid.results ) {
         yt += `📃 *${anu.no} - ${anu.title}*\n🔗 _Link : ${anu.url}_ \n\n\n`
     }
  await Void.sendMessage(from,{image:{url: "https://telegra.ph/file/d05c60fb40c1ab9f90600.jpg" },caption: yt + "*ᴋɪɴɢ ᴠᴀᴊɪʀᴀ ᴡʜᴀᴛꜱᴀᴘᴘ ᴜꜱᴇʀ ʙᴏᴛ*\n*ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴠᴀᴊɪʀᴀ*" },{ quoted: citel })
@@ -76,10 +76,10 @@ cmd({
     filename: __filename
 },
 async(Void, citel, text) => {
-if (!text) return citel.reply("❗ Please enter movie Link to download Subtitles*")
-if(!text.includes('baiscope')) return reply('🚫 *Please enter Valid Movie url*')
-let search = await subdl(search)
-let caption =`*KING VAJIRA SL SUBTITLES DOWNLOADER*
+   if (!text) return citel.reply("❗ Please enter movie Link to download Subtitles*")
+   if(!text.includes('baiscope')) return reply('🚫 *Please enter Valid Movie url*')
+   let search = await subdl(search)
+   let caption =`*KING VAJIRA SL SUBTITLES DOWNLOADER*
 
 📊 *Movie title - ${latest.results.title}*
 
