@@ -11,7 +11,6 @@ var dlsize = 10000 // 1000mb
 cmd({
     pattern: "slsub",
     react: "📃",
-    alias: ["srisub"],
     desc: "Search Sinhala Subtitles  from Web Site",
     category: "download",
     use: '.slsub',
@@ -43,7 +42,6 @@ return fs.unlinkSync(`./${randomName}`);
 cmd({
     pattern: "slsubsearch",
     react: "🔎",
-    alias: ["subsearch","ssub","findsub","sublist"],
     desc: "Search All Subtitles  from Web Site",
     category: "search",
     use: '.technewsall',
@@ -69,7 +67,6 @@ return fs.unlinkSync(`./${randomName}`);
 cmd({
     pattern: "subdlfromlink",
     react: "📃",
-    alias: ["subdllink","subdl"],
     desc: "Download subtitles from Web Sites",
     category: "download",
     use: '.subdlfromlink',
