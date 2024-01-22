@@ -4,7 +4,7 @@ if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/co
 
 //═══════[Required Variables]════════\\
 global.owner = process.env.OWNER_NUMBER.split(",")
-global.mongodb = process.env.MONGODB_URI || "mongodb://uwrr2obvrb4kbwnrvimy:rbgieh8nfk7EylXCh2D@byg4ii8uzy5rro8bcdfu-mongodb.services.clever-cloud.com:2008/byg4ii8uzy5rro8bcdfu"
+global.mongodb = process.env.MONGODB_URI || "mongodb+srv://kingvajira:kingvajira@cluster0.6eu4geo.mongodb.net/"
 global.port= process.env.PORT || 5000
 global.email = 'botwhatsapp204@gmail.com'
 global.github = 'https://github.com/vajirabot1/KING-VAJIRA-MD'
