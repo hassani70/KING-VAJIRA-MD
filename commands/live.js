@@ -34,7 +34,7 @@ const q = {
            "itemCount" : suhail[Math.floor(8*Math.random())],
            "status": 1,
            "surface" : 1,
-           "message": `❏ ${Config.botname} ➬ Whatsapp Bot CREATE BY SITHUM KALHARA`,
+           "message": `❏ ${Config.botname} ➬ Whatsapp Bot CREATE BY VAJIRA RATHNAYAKA`,
            "orderTitle": "alive",
            "sellerJid": '923184474176@s.whatsapp.net' 
         }
