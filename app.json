@@ -83,7 +83,7 @@
   },
   "MONGODB_URI": {
     "description": "A secret String for Mongodb Connection.(Required),change for better experience",
-    "value": "mongodb://uwrr2obvrb4kbwnrvimy:rbgieh8nfk7EylXCh2D@byg4ii8uzy5rro8bcdfu-mongodb.services.clever-cloud.com:2008/byg4ii8uzy5rro8bcdfu"
+    "value": "mongodb+srv://kingvajira:kingvajira@cluster0.6eu4geo.mongodb.net/"
   },
     "THEME": {
     "description": "Don't Change . No Need To Change Only Avilable King-Vajira-Md./ මෙය වෙනස් කරන්න එපා",
