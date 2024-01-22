@@ -55,6 +55,68 @@ cmd({
 //---------------------------------------------------------------------------
 cmd({
 
+            pattern: "song4",
+            desc: "Downloads audio from youtube.",
+            category: "downloader",
+            react: "🎶",
+            filename: __filename,
+            use: '<give text>',
+        },
+        async(Void, citel, text) => {
+  
+                if (!text) return await citel.reply(`*_Ohh PLease, Give Me Song Name_*`);
+                let yts = require("secktor-pack")
+                let search = await yts(text);
+                let i = search.all[1] ;
+                let cap = "\t *---Yt Song Searched Data---*   \n\nTitle : " + i.title + "\nUrl : " + i.url +"\nDescription : " + i.timestamp +"\nViews : "+i.views +"\nUploaded : " +i.ago +"\nAuthor : "+i.author.name+"\n\n\nReply 1 To Video \nReply 2 To Audio" ;
+                Void.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap });
+           
+           
+           
+           
+           
+           
+            
+           
+           /*
+    
+    
+            let search = await yts(text)
+            let listSerch = []
+            let teskd = `Result From ${text}.\n_+ ${search.all.length} more results._`
+            for (let i of search.all) {
+                listSerch.push({
+                    title: i.title,
+                    rowId: `${prefix}ytmp3 ${i.url}`,
+                    description: `*Suhail-MD* / ${i.timestamp}`
+                })
+            }
+            const sections = [
+
+                {
+                    title: "Total Search🔍" + search.all.length,
+                    rows: listSerch
+                }
+
+            ]
+            const listMessage = {
+                text: teskd,
+                footer: tlang().footer,
+                title: ``,
+                buttonText: "Songs",
+                mentions: await Void.parseMention(teskd),
+                sections
+            }
+            return Void.sendMessage(citel.chat, listMessage, {
+                quoted: citel
+            })
+            */
+    })
+
+//---------------------------------------------------------------------------
+
+cmd({
+
             pattern: "fbs",
             desc: "fb down",
             react: "🎶",
